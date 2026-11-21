@@ -39,11 +39,10 @@ The project consists of two service nodes (`Node A` on port `5001` and `Node B` 
 ## Setup
 
 1. Clone the repository:
-   ```bash
    git clone (https://github.com/YOUR_USERNAME/MusicSync.git) (https://github.com/YOUR_USERNAME/MusicSync.git)
    cd MusicSync
 2. Create and activate a virtual environment (PowerShell example):
-   '''
+   ```
    python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-  '''
+   .\.venv\Scripts\Activate.ps1
+   ```
