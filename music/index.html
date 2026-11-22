@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MusicSync — FastAPI панель</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; background: #f5f6fa; color: #222; }
+    h1 { margin-bottom: 8px; }
+    .bar { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 18px; }
+    input, select, button { padding: 8px 10px; font-size: 14px; }
+    button { cursor: pointer; background: #2f3640; color: #fff; border: none; border-radius: 4px; }
+    button:hover { background: #192a56; }
+    .docs-btn {
+      display: inline-block;
+      padding: 6px 10px;
+      margin-left: 6px;
+      font-size: 13px;
+      background: #2f3640;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    .docs-btn:hover { background: #192a56; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .card { background: #fff; padding: 16px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+    pre { background: #1e272e; color: #f5f6fa; padding: 12px; border-radius: 6px; overflow: auto; max-height: 280px; }
+    .row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <h1>MusicSync (FastAPI + UI)</h1>
+  <p>
+    Керування вузлами <b>Node A (:5001)</b> та <b>Node B (:5002)</b> через FastAPI (<code>:5003</code>).
+    Документація API:
+    <a class="docs-btn" href="/node-a/docs" target="_blank">Node A Docs</a>
+    <a class="docs-btn" href="/node-b/docs" target="_blank">Node B Docs</a>
+  </p>
+
+  <div class="bar">
+    <label>Bearer токен:</label>
+    <input id="token" type="text" value="musicsync-secret-token-2026" style="width: 260px;" />
+    <button onclick="loadBoth()">Оновити A і B</button>
+  </div>
+
+  <div class="card" style="margin-bottom: 18px;">
+    <h3>Додати або оновити трек</h3>
+    <div class="row">
+      <select id="targetNode">
+        <option value="a">Node A (:5001)</option>
+        <option value="b">Node B (:5002)</option>
+      </select>
+      <input id="trackId" type="number" placeholder="ID (напр. 101)" style="width: 120px;" />
+      <input id="title" type="text" placeholder="Назва треку" />
+      <input id="artist" type="text" placeholder="Виконавець" />
+      <input id="album" type="text" placeholder="Альбом" />
+      <input id="rating" type="number" min="1" max="5" placeholder="Рейтинг 1-5" style="width: 130px;" />
+    </div>
+    <div class="row">
+      <button onclick="createTrack()">Створити трек (POST)</button>
+      <button onclick="updateTrack()">Оновити трек за ID (PUT)</button>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Node A (:5001)</h3>
+      <pre id="outA">Натисніть «Оновити A і B»...</pre>
+    </div>
+    <div class="card">
+      <h3>Node B (:5002)</h3>
+      <pre id="outB">Натисніть «Оновити A і B»...</pre>
+    </div>
+  </div>
+
+  <script>
+    function authHeaders() {
+      const t = document.getElementById("token").value.trim();
+      return {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + t
+      };
+    }
+
+    async function loadNode(node, elId) {
+      const res = await fetch(`/api/${node}/tracks`, { headers: authHeaders() });
+      const data = await res.json();
+      document.getElementById(elId).textContent = JSON.stringify(data, null, 2);
+    }
+
+    async function loadBoth() {
+      await loadNode("a", "outA");
+      await loadNode("b", "outB");
+    }
+
+    async function createTrack() {
+      const node = document.getElementById("targetNode").value;
+      const body = {
+        id: Number(document.getElementById("trackId").value),
+        title: document.getElementById("title").value,
+        artist: document.getElementById("artist").value,
+        album: document.getElementById("album").value || undefined,
+        rating: document.getElementById("rating").value ? Number(document.getElementById("rating").value) : undefined
+      };
+      const res = await fetch(`/api/${node}/tracks`, {
+        method: "POST",
+        headers: authHeaders(),
+        body: JSON.stringify(body)
+      });
+      const data = await res.json();
+      alert("Відповідь POST: " + JSON.stringify(data));
+      await loadBoth();
+    }
+
+    async function updateTrack() {
+      const node = document.getElementById("targetNode").value;
+      const id = Number(document.getElementById("trackId").value);
+      const body = {};
+      const title = document.getElementById("title").value;
+      const artist = document.getElementById("artist").value;
+      const album = document.getElementById("album").value;
+      const rating = document.getElementById("rating").value;
+      if (title) body.title = title;
+      if (artist) body.artist = artist;
+      if (album) body.album = album;
+      if (rating) body.rating = Number(rating);
+
+      const res = await fetch(`/api/${node}/tracks/${id}`, {
+        method: "PUT",
+        headers: authHeaders(),
+        body: JSON.stringify(body)
+      });
+      const data = await res.json();
+      alert("Відповідь PUT: " + JSON.stringify(data));
+      await loadBoth();
+    }
+  </script>
+</body>
+</html>

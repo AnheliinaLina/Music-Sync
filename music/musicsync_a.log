@@ -1,0 +1,34 @@
+2026-11-21 18:08:43,658 [MusicSync-A] [WARNING] Відхилено запит до /tracks: невалідний або відсутній Bearer токен.
+2026-11-21 18:23:04,831 [MusicSync-A] [INFO] Локальне оновлення треку id=1 (v2) у MusicSync-A
+2026-11-21 18:23:04,876 [MusicSync-A] [INFO] Синхронізовано трек id=1 з peer (http://127.0.0.1:5002) -> HTTP 200
+2026-11-21 18:29:18,572 [MusicSync-A] [INFO] Застосовано синхронізацію треку id=2 (v2) від peer
+2026-11-21 18:32:20,763 [MusicSync-A] [INFO] Застосовано синхронізацію треку id=2 (v3) від peer
+2026-11-21 18:37:12,370 [MusicSync-A] [WARNING] Помилка валідації вхідних даних: 'id'
+2026-11-21 18:39:26,898 [MusicSync-A] [INFO] Створено трек id=101 ('Cpr') у MusicSync-A
+2026-11-21 18:39:26,911 [MusicSync-A] [INFO] Синхронізовано трек id=101 з peer (http://127.0.0.1:5002) -> HTTP 201
+2026-11-21 18:41:01,346 [MusicSync-A] [INFO] Локальне оновлення треку id=1 (v3) у MusicSync-A
+2026-11-21 18:41:01,366 [MusicSync-A] [INFO] Синхронізовано трек id=1 з peer (http://127.0.0.1:5002) -> HTTP 200
+2026-11-21 18:41:10,361 [MusicSync-A] [INFO] Застосовано синхронізацію треку id=1 (v4) від peer
+2026-11-21 18:45:04,848 [MusicSync-A] [INFO] Локальне оновлення треку id=1 (v5) у MusicSync-A
+2026-11-21 18:45:06,897 [MusicSync-A] [ERROR] Помилка мережі при зверненні до peer (http://127.0.0.1:5002): HTTPConnectionPool(host='127.0.0.1', port=5002): Max retries exceeded with url: /internal/sync-track (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=5002): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-11-21 19:08:48,631 [MusicSync-A] [INFO] Створено трек id=6 ('Ice On My Teeth') у MusicSync-A
+2026-11-21 19:08:48,645 [MusicSync-A] [INFO] Синхронізовано трек id=6 з peer (http://127.0.0.1:5002) -> HTTP 201
+2026-11-21 19:09:24,224 [MusicSync-A] [INFO] Локальне оновлення треку id=6 (v2) у MusicSync-A
+2026-11-21 19:09:24,242 [MusicSync-A] [INFO] Синхронізовано трек id=6 з peer (http://127.0.0.1:5002) -> HTTP 200
+2026-11-21 19:10:54,027 [MusicSync-A] [INFO] Локальне оновлення треку id=1 (v6) у MusicSync-A
+2026-11-21 19:10:54,060 [MusicSync-A] [INFO] Синхронізовано трек id=1 з peer (http://127.0.0.1:5002) -> HTTP 200
+2026-11-21 19:13:16,228 [MusicSync-A] [INFO] Локальне оновлення треку id=2 (v4) у MusicSync-A
+2026-11-21 19:13:16,260 [MusicSync-A] [INFO] Синхронізовано трек id=2 з peer (http://127.0.0.1:5002) -> HTTP 200
+2026-11-21 19:14:44,734 [MusicSync-A] [INFO] Локальне оновлення треку id=3 (v2) у MusicSync-A
+2026-11-21 19:14:44,744 [MusicSync-A] [INFO] Синхронізовано трек id=3 з peer (http://127.0.0.1:5002) -> HTTP 200
+2026-11-22 19:53:40,786 [MusicSync-A] [INFO] Застосовано синхронізацію треку id=101 (v2) від peer
+2026-11-22 19:56:56,920 [MusicSync-A] [INFO] Створено трек id=10 ('кАроче') у MusicSync-A
+2026-11-22 19:56:56,936 [MusicSync-A] [INFO] Синхронізовано трек id=10 з peer (http://127.0.0.1:5002) -> HTTP 201
+2026-11-22 19:57:27,234 [MusicSync-A] [INFO] Застосовано синхронізацію треку id=101 (v3) від peer
+2026-11-22 20:04:55,296 [MusicSync-A] [INFO] Створено трек id=11 ('Sweetneer') у MusicSync-A
+2026-11-22 20:04:55,323 [MusicSync-A] [INFO] Синхронізовано трек id=11 з peer (http://127.0.0.1:5002) -> HTTP 201
+2026-11-22 20:05:10,492 [MusicSync-A] [INFO] Локальне оновлення треку id=11 (v2) у MusicSync-A
+2026-11-22 20:05:10,524 [MusicSync-A] [INFO] Синхронізовано трек id=11 з peer (http://127.0.0.1:5002) -> HTTP 200
+2026-11-22 20:06:00,841 [MusicSync-A] [INFO] Локальне оновлення треку id=10 (v2) у MusicSync-A
+2026-11-22 20:06:00,851 [MusicSync-A] [INFO] Синхронізовано трек id=10 з peer (http://127.0.0.1:5002) -> HTTP 200
+2026-11-22 20:09:28,695 [MusicSync-A] [INFO] Отримано та створено трек id=13 (v1) від peer

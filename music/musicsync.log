@@ -1,0 +1,35 @@
+2026-11-21 17:21:55,933 [INFO] Початок імпорту треків з файлу: ne_isnuye.json
+2026-11-21 17:21:55,933 [ERROR] Імпорт перервано через помилку: Файл не знайдено: ne_isnuye.json
+2026-11-21 17:24:39,300 [INFO] Початок імпорту треків з файлу: tracks.json
+2026-11-21 17:24:39,559 [ERROR] Імпорт перервано через помилку: (psycopg.ProgrammingError) missing "=" after "ОЛЬ" in connection info string
+
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: 5432, hostaddr: '::1': missing "=" after "ОЛЬ" in connection info string
+
+- host: 'localhost', port: 5432, hostaddr: '127.0.0.1': missing "=" after "ОЛЬ" in connection info string
+
+(Background on this error at: https://sqlalche.me/e/21/f405)
+2026-11-21 17:25:36,269 [INFO] Початок імпорту треків з файлу: tracks.json
+2026-11-21 17:25:36,483 [ERROR] Імпорт перервано через помилку: (psycopg.OperationalError) connection failed: connection to server at "127.0.0.1", port 5432 failed: KATASTROFALNY:  autoryzacja haslem nie powiodla sie dla uzytkownika "user"
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: 5432, hostaddr: '::1': connection failed: connection to server at "::1", port 5432 failed: KATASTROFALNY:  autoryzacja haslem nie powiodla sie dla uzytkownika "user"
+- host: 'localhost', port: 5432, hostaddr: '127.0.0.1': connection failed: connection to server at "127.0.0.1", port 5432 failed: KATASTROFALNY:  autoryzacja haslem nie powiodla sie dla uzytkownika "user"
+(Background on this error at: https://sqlalche.me/e/21/e3q8)
+2026-11-21 17:30:09,462 [INFO] Початок імпорту треків з файлу: tracks.json
+2026-11-21 17:30:09,684 [INFO] Додано новий трек id=1 ('Midnight Echoes' — Neon Horizon)
+2026-11-21 17:30:09,684 [INFO] Додано новий трек id=2 ('Velvet Rain' — Clara Vance)
+2026-11-21 17:30:09,690 [INFO] Додано новий трек id=3 ('Solar Drift' — Kairo Beats)
+2026-11-21 17:30:09,692 [INFO] Імпорт завершено успішно. Оброблено треків: 3
+2026-11-21 17:32:26,905 [INFO] Початок імпорту треків з файлу: tracks.json
+2026-11-21 17:32:27,111 [INFO] Додано новий трек id=1 ('Midnight Echoes' — Neon Horizon)
+2026-11-21 17:32:27,112 [INFO] Додано новий трек id=2 ('Velvet Rain' — Clara Vance)
+2026-11-21 17:32:27,113 [INFO] Додано новий трек id=3 ('Solar Drift' — Kairo Beats)
+2026-11-21 17:32:27,117 [INFO] Імпорт завершено успішно. Оброблено треків: 3
+2026-11-21 18:03:03,372 [INFO] Початок імпорту треків з файлу: ne_isnuye.json
+2026-11-21 18:03:03,373 [ERROR] Імпорт перервано через помилку: Файл не знайдено: ne_isnuye.json
+2026-11-21 18:07:46,468 [INFO] Початок імпорту треків з файлу: tracks.json
+2026-11-21 18:07:46,693 [ERROR] Імпорт перервано через помилку: (psycopg.OperationalError) connection failed: connection to server at "127.0.0.1", port 5432 failed: KATASTROFALNY:  autoryzacja haslem nie powiodla sie dla uzytkownika "postgres"
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: 5432, hostaddr: '::1': connection failed: connection to server at "::1", port 5432 failed: KATASTROFALNY:  autoryzacja haslem nie powiodla sie dla uzytkownika "postgres"
+- host: 'localhost', port: 5432, hostaddr: '127.0.0.1': connection failed: connection to server at "127.0.0.1", port 5432 failed: KATASTROFALNY:  autoryzacja haslem nie powiodla sie dla uzytkownika "postgres"
+(Background on this error at: https://sqlalche.me/e/21/e3q8)
